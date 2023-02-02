@@ -1,10 +1,8 @@
 # Inlämning - Integrationstester
 
-Detta projekt skall fungera som mall för vad ni skall testa i denna del av kursen, asynkrona tester.
+School assigment from Medieinstitutet
 
 ## Att göra
-
-Klona ner detta repo och ta bort .git-mappen. Skapa ett eget repo och koppla det till er mapp (där det klonade projektet ligger). Nu har ni ett eget projekt att skriva tester för. Se till att ni installerar jest och alla beroenden som behövs för att kunna göra och köra era tester.
 
 Ni behöver i detta projekt skriva tester som testar så många funktioner ni hinner i filerna:
 
@@ -13,10 +11,6 @@ Ni behöver i detta projekt skriva tester som testar så många funktioner ni hi
 - ts/services/movieservice.ts
 
 Ni behöver inte testa main.ts i detta projekt.
-
-## Förslag
-
-Gå igenom koden i lugn och ro och se till att ni förstår vad den gör och hur information skickas till och från funktionerna i filerna. Börja därefter med att skriva tester för koden som är närmast datakällan, alltså movieservice.ts. Skriv därefter tester som använder sig av movieservice.ts och flytta er närmare och närmare webbläsaren. 
 
 ## Betygskriterier
 
