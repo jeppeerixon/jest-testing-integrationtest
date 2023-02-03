@@ -259,9 +259,6 @@ describe("Tests for displayNoRes", () => {
         
         // 3 assert
         expect(container.innerHTML).toBe("<p>Inga sökresultat att visa</p>");
-        
-
-
 
     });
 });
