@@ -94,6 +94,92 @@ describe("Test for sort function", () => {
 
     });
 
-    //kanske lägga till mer testcases ???
+    test("should not sort because == Titles", () => {
+
+        // 1 assign
+        let testSearch: IMovie[] = 
+        [
+            {
+                Title: "bbbbbb",
+                imdbID: "123asdasd",
+                Type: "movie",
+                Poster: "http://bildlank.se/moviePoster.jpg",
+                Year: "1993"
+            }, 
+            {
+                Title: "bbbbbb",
+                imdbID: "111aaaaa",
+                Type: "movie",
+                Poster: "http://bildlank.se/moviePoster.jpg",
+                Year: "2023"
+            }, 
+            {
+                Title: "bbbbbb",
+                imdbID: "qwerty123",
+                Type: "movie",
+                Poster: "http://annanlank.se/PosterMovie.jpg",
+                Year: "1981"
+            }, 
+            {
+                Title: "bbbbbb",
+                imdbID: "imdb098765",
+                Type: "movie",
+                Poster: "http://annanlank.se/PosterMovie.jpg",
+                Year: "2002"
+            }
+        ];
+
+        // 2 act
+        movieSort(testSearch, false);
+
+        // 3 assert
+        expect(testSearch[0].imdbID).toBe("123asdasd");
+        expect(testSearch[3].imdbID).toBe("imdb098765");
+
+    });
+
+    test("should not sort because == Titles", () => {
+
+        // 1 assign
+        let testSearch: IMovie[] = 
+        [
+            {
+                Title: "bbbbbb",
+                imdbID: "123asdasd",
+                Type: "movie",
+                Poster: "http://bildlank.se/moviePoster.jpg",
+                Year: "1993"
+            }, 
+            {
+                Title: "bbbbbb",
+                imdbID: "111aaaaa",
+                Type: "movie",
+                Poster: "http://bildlank.se/moviePoster.jpg",
+                Year: "2023"
+            }, 
+            {
+                Title: "bbbbbb",
+                imdbID: "qwerty123",
+                Type: "movie",
+                Poster: "http://annanlank.se/PosterMovie.jpg",
+                Year: "1981"
+            }, 
+            {
+                Title: "bbbbbb",
+                imdbID: "imdb098765",
+                Type: "movie",
+                Poster: "http://annanlank.se/PosterMovie.jpg",
+                Year: "2002"
+            }
+        ];
+
+        // 2 act
+        movieSort(testSearch, true);
+
+        // 3 assert
+        expect(testSearch[0].imdbID).toBe("123asdasd");
+        expect(testSearch[3].imdbID).toBe("imdb098765");
+
+    });
 
 })

@@ -15,7 +15,65 @@ beforeEach(() => {
 
 describe("test for handleSubmit", () => {
 
-    test("should trigger createHtml", async () => {
+    test("should find value and trigger createhtml", async () => {
+        // 1 assign
+        document.body.innerHTML = `
+        <form id="searchForm">
+        <input type="text" id="searchText" placeholder="Skriv titel här" value="hejsan" />
+        <button type="submit" id="search">Sök</button>
+        </form>
+        <div id="movie-container"></div>
+        `;
+        let container: HTMLDivElement = document.getElementById(
+            "movie-container"
+          ) as HTMLDivElement;
+
+        let searchValue = (document.getElementById("searchText") as HTMLInputElement)
+        .value;
+
+        let spyCreate = jest.spyOn(movieAppSpies, "createHtml").mockReturnValue();
+
+        // 2 act
+        await movieAppSpies.handleSubmit();
+
+        // 3 assert 
+        expect(searchValue).toBe("hejsan");
+        expect(spyCreate).toBeCalled();
+
+        spyCreate.mockReset();
+
+    });
+
+    test("should NOT find value and trigger displ...", async () => {
+        // 1 assign
+        document.body.innerHTML = `
+        <form id="searchForm">
+        <input type="text" id="searchText" placeholder="Skriv titel här" value="" />
+        <button type="submit" id="search">Sök</button>
+        </form>
+        <div id="movie-container"></div>
+        `;
+        let container: HTMLDivElement = document.getElementById(
+            "movie-container"
+          ) as HTMLDivElement;
+
+        let searchValue = (document.getElementById("searchText") as HTMLInputElement)
+        .value;
+
+        let spyDisplay = jest.spyOn(movieAppSpies, "displayNoResult").mockReturnValue();
+
+        // 2 act
+        await movieAppSpies.handleSubmit();
+
+        // 3 assert 
+        expect(searchValue).toBe("");
+        expect(spyDisplay).toBeCalled();
+
+        spyDisplay.mockReset();
+
+    });
+
+    test("should trigger createHtml using Mock", async () => {
         // 1 assign
         document.body.innerHTML = `
         <form id="searchForm">
@@ -50,7 +108,7 @@ describe("test for handleSubmit", () => {
 
     })
 
-    test("should simulate empty search result", async () => {
+    test("should simulate empty search result using Mock", async () => {
         // 1 assign
         document.body.innerHTML = `
         <form id="searchForm">
@@ -87,7 +145,7 @@ describe("test for handleSubmit", () => {
 
     })
 
-    test("should simulate wrong search input", async () => {
+    test("should simulate wrong search input using Mock", async () => {
         // 1 assign
         document.body.innerHTML = `
         <form id="searchForm">
