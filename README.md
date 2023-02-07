@@ -1,29 +1,16 @@
-# Inlämning - Integrationstester
+# Assigment 1 - Intergrationtesting with jest
 
-School assigment from Medieinstitutet
+We were given the code of a basic movie search webapp using omdbapi and were supposed to make __test__ for atleast 60% of the typescript using __mock__ data and __mock__ functions
 
-## Att göra
+## To run the tests
 
-Ni behöver i detta projekt skriva tester som testar så många funktioner ni hinner i filerna:
+Clone the repo on your own computer then enter the following in the terminal:
 
-- ts/movieApp.ts
-- ts/functions.ts
-- ts/services/movieservice.ts
+- npm i
+- npx jest or npm test
+- npx parcel src/index.html (if you want to test the website)
 
-Ni behöver inte testa main.ts i detta projekt.
+## To generate HTML-coverage report
 
-## Betygskriterier
-
-För G:
-
-- Skriv tester för minst 70% av funktionerna
-- Skriva grundläggande integrationstester
-- Använda enklare mock-objekt.
-- Ha code coverage på minst 60%
-
-För VG:
-
-- Skriv tester för samtliga funktioner i filerna angivna ovan
-- Bättre struktur på mock-objekten
-- Kunna strukturera dina tester och visa på god förståelse i testerna.
-- Ha code coverage på över 90%
+- npx jest --coverage
+- open the index.html file in coverage folder with LiveServer.
